@@ -1,0 +1,12 @@
+HTTP/1.1 302 
+Set-Cookie: JSESSIONID=4F4F3F96716441B9B18EE2DF15F556DF; Path=/; HttpOnly
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Location: http://localhost:8000/login
+Content-Length: 0
+Date: Tue, 18 Oct 2022 19:30:39 GMT
+
