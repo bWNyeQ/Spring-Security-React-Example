@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+  spring:
+    depends_on:
+      - db
+    image: 'openjdk:latest'
+    container_name: back-end-server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./target:/webserver
+    command: sh -c "sleep 10 && java -jar /webserver/AuthExample-0.0.1-SNAPSHOT.jar"
