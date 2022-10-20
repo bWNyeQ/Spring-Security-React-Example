@@ -1,4 +1,7 @@
 # Simple Spring Security example
+
+The frontend app used : [here](https://github.com/bWNyeQ/form-auth-java) original by [elalienx/form-auth-java](https://github.com/elalienx/form-auth-java)
+
 In this example we highlight how to use basic authentication methods for a react app.
 
 First of all, place your built react project inside the `main/resources/static` folder.
