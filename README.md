@@ -20,7 +20,6 @@ If you for some reason would click around the site, end up on a different url, a
 This is because spring security will lock down all resources on the system by default, and I have only exposed the react app on endpoint `/` to be 
 visible for everyone. I will make a small edit soon to the settings such that this dosent happen.
 
-
 ## Short info about Spring Security
 When you add the dependency `spring-boot-starter-security` the whole app will be placed
 behind a login form. Since we want to expose some features of our app, we need to add a config file.
@@ -75,6 +74,32 @@ You can use this followin snipet to access basic info about the current auth
     public String info(Authentication auth){
         return auth.getName(); // Returns the username of the currently logged in user.
     }
+```
+
+### Dependencies
+These dependencies have been added to the app to make it work. If you plan on implementing this example in your own app, please make sure to include these in your `pom.xml` if you are using maven.
+```xml
+<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jdbc</artifactId>
+</dependency>
+
+<dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.30</version>
+</dependency>
+
+<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+
 ```
 
 ## Quick note / Warning!
