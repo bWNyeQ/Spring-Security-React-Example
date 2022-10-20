@@ -6,6 +6,21 @@ First of all, place your built react project inside the `main/resources/static` 
 To build a react app, use this command `npm run build`, then inside the `build` folder is the *compiled* react project,
 copy this to the static folder. 
 
+## How to start the example
+To start the example
+1. Download it. 
+2. run `./mvn install -DskipTests` this will compile the project.
+3. run `docker compose up` while in the root folder. This will start a mysql server and the example server.
+4. open a browser and visit `http://localhost:8000`
+
+When you open the browser a react app will be provided. As with most react apps, when you click around in the app it will actually not send any requests
+to the db, even though the url changes.
+
+If you for some reason would click around the site, end up on a different url, and then click refresh, you might be dropped into a login form. 
+This is because spring security will lock down all resources on the system by default, and I have only exposed the react app on endpoint `/` to be 
+visible for everyone. I will make a small edit soon to the settings such that this dosent happen.
+
+
 ## Short info about Spring Security
 When you add the dependency `spring-boot-starter-security` the whole app will be placed
 behind a login form. Since we want to expose some features of our app, we need to add a config file.
