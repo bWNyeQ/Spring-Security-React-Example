@@ -11,6 +11,7 @@ To start the example
 1. Download it. 
 2. run `./mvn install -DskipTests` this will compile the project.
 3. run `docker compose up` while in the root folder. This will start a mysql server and the example server.
+        - You will have to setup the schema on the DB befor the spring server starts. Place run the db, apply the schemas in `/db/data.sql`, and then restart the app.
 4. open a browser and visit `http://localhost:8000`
 
 When you open the browser a react app will be provided. As with most react apps, when you click around in the app it will actually not send any requests
